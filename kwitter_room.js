@@ -9,9 +9,9 @@ var firebaseConfig = {
    measurementId: "G-K0VR4T8TSY"
  };
  
- // Initialize Firebase
+ 
 firebase.initializeApp(firebaseConfig);
-//ADD YOUR FIREBASE LINKS HERE
+
 var user_name=localStorage.getItem("user_name");
 document.getElementById("User_Name").innerHTML="Welcome "+user_name;
 
@@ -38,4 +38,10 @@ function redirectToRoomName(name){
    console.log(name);
    localStorage.setItem("room_name",name);
    window.location="kwitter_page.html";
+}
+
+function Logout(){
+localStorage.removeItem("user_name");
+localStorage.removeItem("room_name");
+window.location="index.html";
 }
